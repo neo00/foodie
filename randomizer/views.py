@@ -9,7 +9,7 @@ class HomeView(TemplateView):
     template_name = 'home.html'
 
     def get_context_data(self):
-        context = super(TemplateView, self).get_context_data()
+        context = super().get_context_data()
         context['restaurant'] = Restaurant.objects.get(
                 pk=random.randint(1, Restaurant.objects.count()))
         return context

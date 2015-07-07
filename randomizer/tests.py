@@ -12,3 +12,11 @@ class RandomizerTest(TestCase):
         response = self.client.get('/')
         self.assertIn(response.context['restaurant'],
                       [restaurant1, restaurant2])
+
+    def test_deleted_restaurant_bug(self):
+        """tests a bug that occurs when you delete a restaurant from the DB"""
+        restaurant1 = Restaurant.objects.create(name='A terrible place!')
+        restaurant2 = Restaurant.objects.create(name='Foodie Heaven')
+        restaurant1.delete()
+        response = self.client.get('/')
+        self.assertEqual(response.context['restaurant'], restaurant2)

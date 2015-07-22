@@ -11,7 +11,7 @@
 ```bash
 python3 -m venv PyJAXenv
 source PyJAXenv/bin/activate
-git clone https://github.com/neo00/foodie.git
+git clone https://github.com/PyJAX/foodie.git
 cd foodie/
 pip install -r requirements.txt
 ./manage.py migrate

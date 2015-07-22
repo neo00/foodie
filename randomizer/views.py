@@ -10,6 +10,6 @@ class HomeView(TemplateView):
 
     def get_context_data(self):
         context = super().get_context_data()
-        context['restaurant'] = Restaurant.objects.get(
-                pk=random.randint(1, Restaurant.objects.count()))
+        index   = random.randint(0, Restaurant.objects.count() - 1)
+        context['restaurant'] = Restaurant.objects.all()[index]
         return context

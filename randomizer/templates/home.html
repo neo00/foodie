@@ -13,7 +13,11 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
     <body>
+    {% if restaurant %}
         <h1>Not sure?</h1>
         <p>{{ restaurant.name }} sounds great!</p>
+    {% else %}
+        <h1>No restaurants exist in the database! </h1>
+    {% endif %}
     </body>
 </html>

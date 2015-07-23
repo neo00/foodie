@@ -20,3 +20,8 @@ class RandomizerTest(TestCase):
         restaurant1.delete()
         response = self.client.get('/')
         self.assertEqual(response.context['restaurant'], restaurant2)
+
+    def test_no_restaurants_bug(self):
+        """tests a bug occuring when no record exits in the restaurants DB"""
+        response = self.client.get('/')
+        self.assertTrue('restaurant' not in response.context)

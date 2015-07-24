@@ -13,11 +13,19 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
     <body>
-    {% if restaurant %}
-        <h1>Not sure?</h1>
-        <p>{{ restaurant.name }} sounds great!</p>
-    {% else %}
-        <h1>No restaurants exist in the database! </h1>
-    {% endif %}
+        <nav class="navbar navbar-inverse">
+            <a class="navbar-brand" href="/">Randomizer</a>
+        </nav>
+        <div class="container-fluid">
+            <div class="page-header">
+            {% if restaurant %}
+                <h1 class="text-center">Not sure?</h1>
+            </div>
+            <p class="text-center">{{ restaurant.name }} sounds great!</p>
+            {% else %}
+                <h1 class="text-center">No restaurants exist in the database! </h1>
+            </div>
+            {% endif %}
+        </div>
     </body>
 </html>
